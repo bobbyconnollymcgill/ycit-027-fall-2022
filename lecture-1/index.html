@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    taco
+    <!-- <canvas id="canvas"></canvas> -->
+    <video controls id="myvideo">
+        <source src=""></source>
+        <source src=""></source>
+      </video>
+  </body>
+  <script src="script.js"></script>
+  <script>
+    const elem = document.getElementById("myvideo");
+
+    // console.log("smokey", elem.requestFullscreen);
+
+if (elem.requestFullscreen) {
+  elem.requestFullscreen();
+}
+
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen();
+  } else if (elem.exitFullscreen) {
+    elem.exitFullscreen();
+  }
+}
+
+document.addEventListener("keydown", (e) => {
+  if (e.keyCode === 13) {
+    console.log("enter");
+    toggleFullScreen();
+  }
+}, false);
+
+  </script>
+</html>
