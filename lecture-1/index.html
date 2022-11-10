@@ -27,8 +27,8 @@ if (elem.requestFullscreen) {
 function toggleFullScreen() {
   if (!document.fullscreenElement) {
     elem.requestFullscreen();
-  } else if (elem.exitFullscreen) {
-    elem.exitFullscreen();
+  } else if (document.exitFullscreen) {
+    document.exitFullscreen();
   }
 }
 
