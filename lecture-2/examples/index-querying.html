@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>This is the header</header>
+    <main>
+      <section>
+        <h1>Section 1</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+          quae.
+        </p>
+      </section>
+      <section>
+        <h1>Section 2</h1>
+        <p class="shadow">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+          quae.
+        </p>
+      </section>
+    </main>
+  </body>
+  <script>
+    // document.getElementById();
+    // document.getElementsByName();
+    // document.getElementsByClassName();
+    const sections = document.getElementsByTagName("section");
+    const firstSection = sections[0];
+
+    // console.log(firstSection.classList);
+    firstSection.classList.add("highlight", "shadow");
+    // firstSection.classList.add("shadow");
+
+    firstSection.par;
+
+    // const firstChild = children[0];
+
+    // console.log(children);
+    const elementsWithShadow = document.querySelectorAll(".shadow");
+
+    console.log(elementsWithShadow);
+    // document.querySelectorAll();
+
+    elementsWithShadow.forEach((elem) => {
+      console.log(elem.innerHTML);
+    });
+  </script>
+  <style>
+    .highlight {
+      background-color: bisque;
+    }
+
+    .shadow {
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</html>
