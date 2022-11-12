@@ -1,0 +1,37 @@
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;
+
+  height: 100%;
+}
+
+#grid > div {
+  background-color: rgb(235, 228, 28);
+  position: absolute;
+  inset: 2rem;
+}
+
+#grid > div > div {
+  background-color: rgb(213, 47, 38);
+  position: absolute;
+  inset: 2rem;
+}
+
+#grid > div > div > div {
+  background-color: rgb(106, 223, 33);
+  position: absolute;
+  inset: 2rem;
+}
+
+#grid > div > div > div > div {
+  background-color: rgb(91, 71, 190);
+  position: absolute;
+  inset: 2rem;
+}
