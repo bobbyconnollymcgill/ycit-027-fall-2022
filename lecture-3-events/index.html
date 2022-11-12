@@ -9,15 +9,46 @@
   <body>
     <div id="grid"></div>
   </body>
+  <script src="./game.js"></script>
   <script>
+    // NAME_OF_GAME,
+    // getCurrentPlayer,
+    // getGrid: () => grid,
+    // onPlayerClicks,
+
     const grid = document.getElementById("grid");
     for (let i = 1; i <= 9; i++) {
       const div = document.createElement("div");
       const span = document.createElement("span");
-      span.innerText = i;
+      span.id = `cell-${i}`;
+
+      //   span.innerText = i;
       div.appendChild(span);
       grid.appendChild(div);
+
+      div.addEventListener("click", () => {
+        gameState.onPlayerClicks(i);
+
+        console.log(gameState.getGrid());
+      });
     }
+
+    function renderLoop() {
+      //   console.log(new Date().toUTCString());
+
+      for (let i = 1; i <= 9; i++) {
+        const span = document.getElementById(`cell-${i}`);
+        span.innerText = gameState.getGrid().get(i);
+      }
+
+      if (gameState.getIsGameEnded()) {
+        document.body.classList.add("gameover");
+      }
+
+      window.requestAnimationFrame(renderLoop);
+    }
+
+    window.requestAnimationFrame(renderLoop);
   </script>
   <style>
     body {
@@ -25,6 +56,10 @@
       margin: 0;
 
       background-color: turquoise;
+    }
+
+    body.gameover {
+      background-color: red;
     }
 
     #grid {
@@ -52,6 +87,11 @@
     }
 
     #grid > div > span {
+      font-family: fantasy;
+      pointer-events: none;
+      -webkit-user-select: none; /* Safari */
+      -ms-user-select: none; /* IE 10 and IE 11 */
+      user-select: none; /* Standard syntax */
     }
   </style>
 </html>
