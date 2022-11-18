@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Hey Taco!
+    <button style="display: block; margin-top: 1rem">Do fetch()</button>
+  </body>
+  <script>
+    const btn = document.querySelector("button");
+    // console.log("smokey", btn);
+
+    btn.onclick = () => {
+      // console.log("HELLO???")
+
+      // Use fetch() API to send an HTTP request to our server
+
+      const result = fetch("http://localhost:3333/").then((res) => res.json());
+
+      // result.then((data) => console.log(data));
+      result.then((data) => {
+        document.body.innerHTML = `<h1>Hello ${data.name}</h1>`;
+      });
+    };
+  </script>
+</html>
