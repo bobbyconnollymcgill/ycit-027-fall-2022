@@ -1,7 +1,39 @@
 /* Change font to arial */
 
 body {
+    margin: 0;
+
     font-family: arial;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+body > h1,
+body > h2 {
+    text-align: center;
+}
+
+#dev-tools {
+    margin-top: auto;
+    display: none;
+}
+
+#score-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 4rem;
+    margin: 5rem 7rem;
+}
+
+#score-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 4rem;
+    margin: 5rem 7rem;
 }
 
 .grid {
@@ -31,13 +63,14 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 15%);
     z-index: 1000;
+    display: none;
 }
 
 #modal {
     position: absolute;
-    top: 30%;
+    bottom: 5%;
     left: 50%;
-    transform: translate(-50%, -90%);
+    transform: translate(-50%, 0);
     background-color: white;
     padding: 1rem;
     border-radius: 5px;
@@ -50,6 +83,6 @@ body {
 
 #modal > .modal-btn-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 1rem;
 }

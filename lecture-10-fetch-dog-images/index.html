@@ -9,37 +9,41 @@
         <script src="./script.js"></script>
     </head>
     <body>
-        <h1>Cute Puppy Images App</h1>
+        <h1>CEO versus WOOF</h1>
+        <h2>Who has the cutest puppies?</h2>
 
-        <p>Click the button to fetch a pair of puppies</p>
-
-        <button
-            id="fetch-puppies-btn"
-            onclick="getPairOfPuppyImageUrlsAndUpdateDOM()"
-        >
-            Fetch puppies
-        </button>
+        <div id="score-left">0</div>
+        <div id="score-right">0</div>
 
         <div class="grid">
             <span>
-                <img id="image-1" />
+                <img id="image-ceo" />
             </span>
 
             <span>
-                <img id="image-2" />
+                <img id="image-woof" />
             </span>
         </div>
 
         <div id="modal-container">
             <div id="modal">
-                <h3>Fetch new pair of puppies?</h3>
-                <p>Click "Keep" to keep the current pair of puppies</p>
-                <p>Click "Fetch" to fetch a new pair of puppies</p>
+                <h3>Which puppy is the cutest?</h3>
                 <div class="modal-btn-container">
-                    <button id="keep-btn">Keep</button>
-                    <button id="fetch-btn">Fetch</button>
+                    <button onclick="leftBtnClicked()">Left</button>
+                    <button onclick="retryBtnClicked()">Retry</button>
+                    <button onclick="rightBtnClicked()">Right</button>
                 </div>
             </div>
+        </div>
+
+        <div id="dev-tools">
+            <p>Click the button to fetch a pair of puppies</p>
+            <button
+                id="fetch-puppies-btn"
+                onclick="getPairOfPuppyImageUrlsAndUpdateDOM()"
+            >
+                Fetch puppies
+            </button>
         </div>
     </body>
 </html>
